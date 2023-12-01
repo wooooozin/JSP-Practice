@@ -88,8 +88,7 @@
 		<td width="350"> <%= age %>
 		</td>
 	</tr>
-		</tr>
-		<tr height="50">
+	<tr height="50">
 		<td width="150"> 하고싶은 말 </td>
 		<td width="350"> <%= info %>
 		</td>
