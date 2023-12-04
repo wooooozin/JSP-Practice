@@ -18,6 +18,7 @@
 <body>
 	<!-- top -->
 	<table>
+		<thead align="right"><%= request.getParameter("id") %></thead>
 		<tr height="100">
 		<!-- logo image -->
 		<td colspan="2" align="center">
@@ -34,7 +35,6 @@
 			<td width="130" align="center">침낭</td>
 			<td width="130" align="center">테이블</td>
 			<td width="130" align="center">불멍</td>		
-		
 		</tr>
 	</table>
 
