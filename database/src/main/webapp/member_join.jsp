@@ -19,7 +19,7 @@
 <body>
 
 	<h2>회원가입</h2>
-	<form action="request_join_proc.jsp" method="post">
+	<form action="member_join_proc.jsp" method="post">
 	<table border="1">
 	<tr height="50">
 		<td width="150"> 아이디 </td>
