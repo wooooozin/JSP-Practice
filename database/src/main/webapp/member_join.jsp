@@ -49,7 +49,7 @@
 	<tr height="50">
 		<td width="150"> 당신의 관심분야 </td>
 		<td width="350"> 
-		<input type="checkbox" name="hobby" value="캠핑"> 캠핑 &nbsp;&nbsp;
+		<input type="checkbox" name="hobby" value="캠핑" checked> 캠핑 &nbsp;&nbsp;
 		<input type="checkbox" name="hobby" value="등산"> 등산 &nbsp;&nbsp;
 		<input type="checkbox" name="hobby" value="영화"> 영화 &nbsp;&nbsp;
 		<input type="checkbox" name="hobby" value="독서"> 독서 &nbsp;&nbsp; 
