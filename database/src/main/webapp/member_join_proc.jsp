@@ -1,3 +1,4 @@
+<%@page import="dao.MemberDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -32,36 +33,10 @@
 	
 	<%
 		mbean.setHobby(texHobby);
-		String id = "hr";
-		String pass = "hr";
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";	
-		
-		try {
-			// 데이터 베이스 선언
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, id, pass);
-			// 쿼리 준비 실행
-			String query = "INSERT INTO member VALUES (?,?,?,?,?,?,?,?,?)";
-			PreparedStatement statement = con.prepareStatement(query);
-			
-			statement.setString(1, mbean.getId());
-			statement.setString(2, mbean.getEmail());
-			statement.setString(3, mbean.getPass1());
-			statement.setString(4, mbean.getPass2());
-			statement.setString(5, mbean.getTel());
-			statement.setString(6, mbean.getHobby());
-			statement.setString(7, mbean.getJob());
-			statement.setString(8, mbean.getAge());
-			statement.setString(9, mbean.getInfo());
-			statement.executeUpdate();
-			
-			con.close();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		MemberDAO dao = new MemberDAO();
+		dao.insetMemeber(mbean);
+		response.sendRedirect("memberList.jsp");
 	%>
-	오라클 접속 완료 
 
 </body>
 </html>
