@@ -10,12 +10,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	table {
+		border: 1px solid black;
+		align: center;
+	}
+	td {
+		border: 1px solid black;
+	}
+</style>
 </head>
 <body>
 <%
 	MemberDAO dao = new MemberDAO();
 	List<Member> list = dao.allSelectMember();
 %>
+
+<table>
+	<tr height="50">
+	<td align="center">아이디</td>
+	<td align="center">이메일</td>
+	<td align="center">전화번</td>
+	<td align="center">취미</td>
+	</tr>
+	<%
+		for (int i = 0; i < list.size(); i++) {
+			Member member = list.get(i);
+	%>
+	<tr height="50">
+	<td align="center"><%= member.getId() %></td>
+	<td align="center"><%= member.getEmail() %></td>
+	<td align="center"><%= member.getTel() %></td>
+	<td align="center"><%= member.getHobby() %></td>
+	</tr>
+	<%
+		}
+	%>
+</table>
 
 </body>
 </html>
