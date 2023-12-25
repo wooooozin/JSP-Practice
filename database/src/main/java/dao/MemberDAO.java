@@ -95,6 +95,40 @@ public class MemberDAO {
 		return list;
 	}
 	
+	public Member oneSelecetMember(String id) {
+		Member member = new Member();
+		
+		try {
+			getConnection();
+			String query = "SELECT * FROM member WHERE id = ?";
+			PreparedStatement statement = con.prepareStatement(query);
+			statement.setString(1, id);
+			rs = statement.executeQuery();
+			
+			if (rs.next()) {
+				member.setId(rs.getString("id"));
+				member.setEmail(rs.getString("email"));
+				member.setPass1(rs.getString("pass1"));
+				member.setPass2(rs.getString("pass2"));
+				member.setTel(rs.getString("tel"));
+				member.setHobby(rs.getString("hobby"));
+				member.setJob(rs.getString("job"));
+				member.setAge(rs.getString("age"));
+				member.setInfo(rs.getString("info"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("목록 조회 중 에러");
+		} finally {
+            close(pstm);
+            close(con);
+            close(rs);
+            System.out.println("자원해제");
+		}
+		
+		return member;
+	}
+	
     private void close(AutoCloseable closeable) {
         if (closeable != null) {
             try {

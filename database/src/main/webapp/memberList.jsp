@@ -30,7 +30,7 @@
 	<tr height="50">
 	<td align="center">아이디</td>
 	<td align="center">이메일</td>
-	<td align="center">전화번</td>
+	<td align="center">전화번호호호호호호</td>
 	<td align="center">취미</td>
 	</tr>
 	<%
@@ -38,7 +38,11 @@
 			Member member = list.get(i);
 	%>
 	<tr height="50">
-	<td align="center"><%= member.getId() %></td>
+	<td align="center">
+	<a href="MemberInfo.jsp?id=<%=member.getId()%>">
+	<%= member.getId() %>
+	</a>
+	</td>
 	<td align="center"><%= member.getEmail() %></td>
 	<td align="center"><%= member.getTel() %></td>
 	<td align="center"><%= member.getHobby() %></td>

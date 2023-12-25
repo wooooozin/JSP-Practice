@@ -85,7 +85,7 @@
 	<tr height="50">
 		<td colspan="2">
 		<input type="submit" value="회원가입">
-		<input type="reset" value="취소"> 
+		<input type="reset" value="입력 초기화 / 취소"> 
 		</td>
 	</tr>
 	</table>
