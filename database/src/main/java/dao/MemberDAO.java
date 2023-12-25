@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Member;
 
@@ -54,6 +56,12 @@ public class MemberDAO {
             close(con);
             System.out.println("자원해제");
         }
+	}
+	
+	public List<Member> allSelectMember() {
+		List<Member> list = new ArrayList<>();
+		
+		return list;
 	}
 	
     private void close(AutoCloseable closeable) {
