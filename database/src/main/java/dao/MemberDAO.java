@@ -129,6 +129,28 @@ public class MemberDAO {
 		return member;
 	}
 	
+	public String getPass(String id) {
+		String pass = null;
+		try {
+			getConnection();
+			String query = "SELECT pass1 from MEMBER WHERE id = ?";
+			pstm = con.prepareStatement(query);
+			pstm.setString(1, id);
+			rs = pstm.executeQuery();
+			if (rs.next()) {
+				pass = rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstm);
+            close(con);
+            close(rs);
+            System.out.println("자원해제");
+        }
+		return pass;
+	}
+	
     private void close(AutoCloseable closeable) {
         if (closeable != null) {
             try {

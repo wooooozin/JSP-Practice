@@ -43,13 +43,9 @@
 		<td align="center"><input type="password" name="pass1" />
 		</td>
 		</tr>
-		<tr height="50">
-		<td align="center">비밀번호 확인</td>
-		<td align="center"><input type="password" name="pass2" />
-		</td>
-		</tr>
 		<tr>
 		<td colspan="2">
+		<input type="hidden" name="id" value="<%= member.getId() %>">
         <input type="submit" value="수정 확인" /> &nbsp;&nbsp; 	
 		</td>	
 		</tr>
