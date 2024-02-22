@@ -24,7 +24,8 @@
 	String pass = mdao.getPass(id);
 
 	if (mbean.getPass1().equals(pass)) {
-		
+		mdao.updateMember(mbean);
+		response.sendRedirect("memberList.jsp");
 	} else {
 	%>
 		<script type="text/javascript">

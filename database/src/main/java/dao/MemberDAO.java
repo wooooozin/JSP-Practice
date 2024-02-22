@@ -151,6 +151,26 @@ public class MemberDAO {
 		return pass;
 	}
 	
+	public void updateMember(Member member) {
+		try {
+			getConnection();
+			String sql = "update member set email=?, tel=? where id = ?";
+			pstm = con.prepareStatement(sql);
+			pstm.setString(1, member.getEmail());
+			pstm.setString(2, member.getTel());
+			pstm.setString(3, member.getId());
+			pstm.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstm);
+            close(con);
+            close(rs);
+            System.out.println("자원해제");
+        }
+	}
+	
     private void close(AutoCloseable closeable) {
         if (closeable != null) {
             try {
